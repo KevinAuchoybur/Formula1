@@ -1,0 +1,23 @@
+input[type="text"] {
+  height: 3.0rem;
+  font-size: 1.2rem;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: white;
+    background-color: #E70015;
+}
+
+ .nav-justified>li>a{
+color: black;
+
+  }
+
+a:focus, a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-link { cursor: pointer; }
+a.btn { cursor: default; }
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+  <html lang="fr" ng-app="f1">
+    <head>
+      <meta charset="utf-8"> <!-- Création appli Angular -->
+      <title>Formula 1</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <div class="container">
+        
+        <!-- Nav tabs -->
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+                                                <!-- Nav tabs -->
+          <div class="card" >
+          <ul class="nav nav-pills nav-justified"  role="tablist">
+          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+          <li role="presentation"><a href="#cars" aria-controls="messages" role="tab" data-toggle="tab">Cars</a></li>
+           <li role="presentation"><a href="#drivers" aria-controls="messages" role="tab" data-toggle="tab">Drivers</a></li>
+          </ul>
+
+
+                                        <!-- Tab panes -->
+        <div class="tab-content"><br><br><br>
+       
+
+  <div role="tabpanel" class="tab-pane active" id="home">
+            <center><img src="img/f1.jpg" class="img-responsive" width="500" height="200"></img></center>
+        </div>
+<div role="tabpanel" class="tab-pane" id="cars">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passage..</div>
+
+
+  <div role="tabpanel" class="tab-pane" id="drivers">
+    <div ng-controller = "searchController">
+          <input ng-model="search" ng-model-options="{debounce : 400}" ng-change="getDrivers()" type="text" class="form-control m-y-2" placeholder="Search a driver, a team" class="center-block">
+          <!--
+          ng-model : Enregister la valeur saisie dans la barre de recherche.
+          debounce : pas prendre en compte directement les changements sur le modele. Mettre à jour le modele dans 4ms
+          ng-change : Des que la valeur de search change, appel d'une méthode; AFFICHER LES RESULTATS DE LA RECHERCHE
+          -->
+          <div class="lead text-xs-center" ng-hide="drivers.length">No result</div>
+          <div class="row">
+          <div class="col-xs-4" ng-repeat="driver in drivers">
+
+
+              <div class="card">
+                <img class="card-img-top img-fluid" ng-src="img/drivers/{{driver.imgDriver}}" alt="image">
+                <div class="card-block">
+                <center><h5 class="card-title"><img ng-src="img/numero/{{driver.imgNumCar}}" width=50 height=50>  
+                   {{driver.firstname}} {{driver.lastname}}  <img ng-src="img/country/{{driver.imgCountry}}" width=30 height=30></h5></center>
+                  <!--<center><p class="card-text"><img ng-src="img/team/{{driver.imgTeam}}" width=50 height=50></p></center>-->
+                  <center><img ng-src="img/team/{{driver.imgTeam}}" width=60 height=60> {{driver.team}}</center>
+                </div>
+               
+                  <ul class="list-group list-group-flush">
+                  <center><li class="list-group-item">WIN : <b>{{driver.win}}</b></li></center>
+                </ul>
+                 <ul class="list-group list-group-flush">
+                  <center><li class="list-group-item">PODIUM : <b>{{driver.podium}}</b></li></center>
+                </ul>
+                 <ul class="list-group list-group-flush">
+                  <center><li class="list-group-item">WORLD CHAMPIONSHIP : <b>{{driver.worldchamp}}</b></li></center>
+                </ul>
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+
+  </div>
+                                            
+
+    
+
+    </div>
+    </div>
+
+
+</div>
+      
+
+
+
+      </div>
+
+        </div>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script src="js/f1.js"></script>
+      <script src="js/menu.js"></script>
+      <script type="text/javascript" src="js/app.js"></script>
+    </body>
+  </html>

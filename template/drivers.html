@@ -1,0 +1,19 @@
+<div class="card">
+                <img class="card-img-top img-fluid" ng-src="img/drivers/{{driver.imgDriver}}" alt="image">
+                <div class="card-block">
+                <center><h5 class="card-title"><img ng-src="img/numero/{{driver.imgNumCar}}" width=50 height=50>  
+                   {{driver.firstname}} {{driver.lastname}}  <img ng-src="img/country/{{driver.imgCountry}}" width=30 height=30></h5></center>
+                  <!--<center><p class="card-text"><img ng-src="img/team/{{driver.imgTeam}}" width=50 height=50></p></center>-->
+                  <center><img ng-src="img/team/{{driver.imgTeam}}" width=60 height=60> {{driver.team}}</center>
+                </div>
+               
+                  <ul class="list-group list-group-flush">
+                  <center><li class="list-group-item">WIN : <b>{{driver.win}}</b></li></center>
+                </ul>
+                 <ul class="list-group list-group-flush">
+                  <center><li class="list-group-item">PODIUM : <b>{{driver.podium}}</b></li></center>
+                </ul>
+                 <ul class="list-group list-group-flush">
+                  <center><li class="list-group-item">WORLD CHAMPIONSHIP : <b>{{driver.worldchamp}}</b></li></center>
+                </ul>
+              </div>
